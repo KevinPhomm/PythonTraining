@@ -22,7 +22,7 @@ class Banana :
 
 
 class Graph :
-    def __init__(self,nodes,bridges):
+    def __init__(self,nodes=[],bridges={}):
         self.nodes = nodes
         self.bridges = bridges
 
