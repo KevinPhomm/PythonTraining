@@ -15,7 +15,7 @@ def fibonnaci(n):
     i = 0
     n = int(n)
 
-    while i <=n :
+    while i < n-1 : 
         if list[i] == 0:
             list.append(1)
         else:
@@ -23,6 +23,7 @@ def fibonnaci(n):
         i += 1
 
     print(list)
+    print(list.__len__())
 
 
 fibonnaci(number)
