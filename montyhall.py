@@ -4,18 +4,16 @@ from random import randint
 class MontyHall:
     def __init__(self):
         self.portes = self.init_porte()
-        self.myIndexChoice = randint(0,2)
+        self.myIndexChoice = randint(0, 2)
         self.MCIndexChoice = self.MCChoose()
         self.resultat = self.portes[self.myIndexChoice]
-
 
     def init_porte(self):
         listedeporte = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
         return listedeporte[randint(0,2)]
 
-
     def MCChoose(self):
-        indexesofzero = self.__getIndexOfZero__()
+        indexesofzero = self.__getIndexOfZero()
         selectIndexZero = randint(0,1)
         if self.myIndexChoice in indexesofzero and indexesofzero[selectIndexZero] == self.myIndexChoice:
             if selectIndexZero == 0:
@@ -25,18 +23,15 @@ class MontyHall:
         else:
             return indexesofzero[selectIndexZero]
 
-
     def changePorte(self):
         self.resultat = not self.resultat
 
-
-    def __getIndexOfZero__(self):
+    def __getIndexOfZero(self):
         indexesofzero = []
         for porteindex in range(0, self.portes.__len__()):
             if self.portes[porteindex] == 0:
                 indexesofzero.append(porteindex)
         return indexesofzero
-
 
 
 class Simulator:
@@ -66,7 +61,7 @@ class Simulator:
         print("Nombre de victoire quand on change pas : %s " % self.victoireSurIdle)
 
 
-Simulator(100).results()
+Simulator(10000).results()
 
 
 
